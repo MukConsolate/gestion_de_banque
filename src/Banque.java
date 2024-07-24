@@ -19,11 +19,25 @@ public class Banque {
         compteBancaireHashMap.remove(numeroCompte);
     }
 
-    public void modifierUnCompteParIdentifiant(String identifiant, CompteBancaire nouveauCompte) {
+    /*public void modifierUnCompteParIdentifiant(String identifiant, CompteBancaire nouveauCompte) {
         if (compteBancaireHashMap.containsKey(identifiant)) {
             compteBancaireHashMap.put(identifiant, nouveauCompte);
         } else {
             System.out.println("Le compte avec l'identifiant " + identifiant + " n'existe pas.");
+        }
+    }
+    */
+     public void modifierUnCompteParIdentifiant(String identifiant, CompteBancaire nouveauCompte) {
+        if (compteBancaireHashMap.containsKey(identifiant)) {
+            
+            nouveauCompte.mettreAJourEnBaseDeDonnees();
+            
+          
+            compteBancaireHashMap.put(identifiant, nouveauCompte);
+            
+            System.out.println("Compte modifié avec succès.");
+        } else {
+            System.out.println("Aucun compte trouvé avec l'identifiant " + identifiant);
         }
     }
 
