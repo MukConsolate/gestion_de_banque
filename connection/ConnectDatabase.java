@@ -17,6 +17,9 @@ public class ConnectDatabase {
                 System.out.println("Connected to the database!");
                 return connection;
             }
+            else{
+                System.out.println(" Failled to Connected the database!");
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         }
