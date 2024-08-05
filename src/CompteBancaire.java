@@ -14,6 +14,40 @@ public class CompteBancaire {
         this.solde = solde;
     }
 
+     public void sauvegarderEnBaseDeDonnees() {
+        try (Connection connection = DatabaseManager.getConnection()) {
+            String sql = "INSERT INTO compte_bancaire (nom_titulaire, identifiant, intitule, solde) VALUES (?, ?, ?, ?)";
+            PreparedStatement statement = connection.prepareStatement(sql);
+            statement.setString(1, nomTitulaire);
+            statement.setString(2, identifiant);
+            statement.setString(3, intitule);
+            statement.setDouble(4, solde);
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static CompteBancaire chargerDepuisBaseDeDonnees(String identifiant) {
+        CompteBancaire compte = null;
+        try (Connection connection = DatabaseManager.getConnection()) {
+            String sql = "SELECT * FROM compte_bancaire WHERE identifiant = ?";
+            PreparedStatement statement = connection.prepareStatement(sql);
+            statement.setString(1, identifiant);
+            ResultSet resultSet = statement.executeQuery();
+            if (resultSet.next()) {
+                String nomTitulaire = resultSet.getString("nom_titulaire");
+                String intitule = resultSet.getString("intitule");
+                double solde = resultSet.getDouble("solde");
+                compte = new CompteBancaire(nomTitulaire, intitule, solde);
+                compte.setIdentifiant(identifiant);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return compte;
+    }
+
 
     public String getNomTitulaire() {
         return nomTitulaire;
