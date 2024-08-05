@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.Pane?>
 
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="555.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bankapp.BanqueControl">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="555.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.bankapp.BanqueControl">
    <children>
       <Label layoutX="212.0" layoutY="38.0" prefHeight="36.0" prefWidth="183.0" text="Entrez les coordonnees" />
       <Label layoutX="181.0" layoutY="98.0" prefHeight="36.0" prefWidth="224.0" text="Numero Compte" />

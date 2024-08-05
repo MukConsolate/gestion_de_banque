@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.link.Controller" spacing="10" padding="10">
+    <!-- Champs de saisie -->
+    <TextField fx:id="field1" promptText="Entrez la première valeur"/>
+    <TextField fx:id="field2" promptText="Entrez la deuxième valeur"/>
+    <TextField fx:id="field3" promptText="Entrez la troisième valeur"/>
+    <TextField fx:id="field4" promptText="Entrez la quatrième valeur"/>
+    <TextField fx:id="field5" promptText="Entrez la cinquième valeur"/>
+    
+    <!-- Bouton pour ajouter des éléments à la liste -->
+    <Button text="Ajouter" onAction="#handleAdd"/>
+    
+    <!-- Zone pour afficher la liste des entrées -->
+    <Label text="Liste des entrées:"/>
+    <ListView fx:id="listView"/>
+</VBox>
